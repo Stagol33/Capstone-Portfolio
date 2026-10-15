@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breck Cooper, front-end developer</title>
+  <meta name="description" content="Breck Cooper is a front-end developer in Nashville who builds accessible, localized web experiences. See his projects, background and contact details.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply the saved or system theme before first paint
+    (function () {
+      var root = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      root.classList.add('js');
+    })();
+  </script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="wordmark" href="#top">Breck Cooper</a>
+
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme">
+        <svg class="icon icon--moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon icon--sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="hero__name" id="hero-title">Breck Cooper</h1>
+      <div class="meter" aria-hidden="true"></div>
+      <div class="hero__intro">
+        <p class="hero__lede">Front-end developer in Nashville. I build accessible, localized training courses at KnowBe4, and before any of that I was mixing records.</p>
+        <p class="hero__actions">
+          <a class="button button--primary" href="#projects">See my projects</a>
+          <a class="button" href="#contact">Get in touch</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="section__head">
+        <h2 id="projects-title">Projects</h2>
+        <p>Seven projects with live demos, from vanilla JavaScript to a full-stack Express app. Each one links to the working site and its code.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="javascript" aria-pressed="false">Vanilla JavaScript</button>
+        <button type="button" class="filter" data-filter="react" aria-pressed="false">React</button>
+        <button type="button" class="filter" data-filter="express" aria-pressed="false">Node and Express</button>
+      </div>
+      <p class="filter-status" aria-live="polite">Showing all 7 projects</p>
+
+      <ul class="project-grid">
+        <li class="project" data-category="express">
+          <a class="project__shot" href="https://sql-library-manager.onrender.com" tabindex="-1" aria-hidden="true">
+            <img src="images/library-manager.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://sql-library-manager.onrender.com">SQL Library Manager</a></h3>
+          <p>A full-stack catalogue for a book collection: browse, search, add, edit and delete records.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>Node.js, Express, Sequelize, PostgreSQL, Pug</dd>
+            <dt>The tricky part</dt>
+            <dd>One search box had to match title, author, genre or year, and still paginate. Validation runs on both client and server, and the app uses SQLite locally and PostgreSQL on Render.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://sql-library-manager.onrender.com">Live site</a>
+            <a href="https://github.com/Stagol33/SQL-Library-Manager">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="react">
+          <a class="project__shot" href="https://react-gallery-app-bavh.onrender.com" tabindex="-1" aria-hidden="true">
+            <img src="images/react-gallery.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://react-gallery-app-bavh.onrender.com">React Gallery</a></h3>
+          <p>An image search built on the Pixabay API. It opens on cats, dogs and computers, and every photo opens a detail view.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>React, React Router, Vite, Pixabay API</dd>
+            <dt>The tricky part</dt>
+            <dd>Keeping searches in the URL so results can be bookmarked, and catching unknown routes with a proper 404 page.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://react-gallery-app-bavh.onrender.com">Live site</a>
+            <a href="https://github.com/Stagol33/react-gallery-app">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="javascript">
+          <a class="project__shot" href="https://stagol33.github.io/Public-API-Requests/" tabindex="-1" aria-hidden="true">
+            <img src="images/employee-directory.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://stagol33.github.io/Public-API-Requests/">Employee Directory</a></h3>
+          <p>Twelve people pulled from the Random User API, shown as cards you can search by name.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>JavaScript, Fetch API, HTML, CSS</dd>
+            <dt>The tricky part</dt>
+            <dd>The detail modal has previous and next buttons, so they had to step through the filtered list, not the original twelve.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://stagol33.github.io/Public-API-Requests/">Live site</a>
+            <a href="https://github.com/Stagol33/Public-API-Requests">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="javascript">
+          <a class="project__shot" href="https://stagol33.github.io/OOP-Game/" tabindex="-1" aria-hidden="true">
+            <img src="images/phrase-hunter.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://stagol33.github.io/OOP-Game/">Phrase Hunter</a></h3>
+          <p>A phrase-guessing game in the spirit of Hangman, played with the on-screen or physical keyboard.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>Object-oriented JavaScript, HTML, CSS animation</dd>
+            <dt>The tricky part</dt>
+            <dd>Splitting the logic into Game and Phrase classes kept each one testable. Animations then give every guess clear feedback: a flip for a hit, a shake for a miss.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://stagol33.github.io/OOP-Game/">Live site</a>
+            <a href="https://github.com/Stagol33/OOP-Game">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="javascript">
+          <a class="project__shot" href="https://stagol33.github.io/Interactive-Form/" tabindex="-1" aria-hidden="true">
+            <img src="images/interactive-form.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://stagol33.github.io/Interactive-Form/">Conference Registration Form</a></h3>
+          <p>A sign-up form for conference workshops that adapts as you fill it in.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>JavaScript, HTML forms, CSS</dd>
+            <dt>The tricky part</dt>
+            <dd>Fields check themselves as you leave them, the shirt colours depend on the design you pick, and the credit card fields are only validated when you choose to pay by card.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://stagol33.github.io/Interactive-Form/">Live site</a>
+            <a href="https://github.com/Stagol33/Interactive-Form">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="javascript">
+          <a class="project__shot" href="https://stagol33.github.io/Data-Pagination-and-Filtering/" tabindex="-1" aria-hidden="true">
+            <img src="images/student-directory.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://stagol33.github.io/Data-Pagination-and-Filtering/">Student Directory</a></h3>
+          <p>A paginated list of students with a search that filters as you type.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>JavaScript, HTML, CSS</dd>
+            <dt>The tricky part</dt>
+            <dd>The page buttons are rebuilt from the search results, so a filtered list never shows empty pages, and a search with no matches says so.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://stagol33.github.io/Data-Pagination-and-Filtering/">Live site</a>
+            <a href="https://github.com/Stagol33/Data-Pagination-and-Filtering">Code on GitHub</a>
+          </p>
+        </li>
+
+        <li class="project" data-category="javascript">
+          <a class="project__shot" href="https://stagol33.github.io/RandomQuoteGenerator/" tabindex="-1" aria-hidden="true">
+            <img src="images/quote-generator.webp" width="960" height="440" alt="" loading="lazy">
+          </a>
+          <h3><a href="https://stagol33.github.io/RandomQuoteGenerator/">Random Quote Generator</a></h3>
+          <p>A new quote on every click, or on its own every 15 seconds.</p>
+          <dl class="project__notes">
+            <dt>Built with</dt>
+            <dd>JavaScript, HTML, CSS</dd>
+            <dt>The tricky part</dt>
+            <dd>Coordinating the timer with the button so a manual click and the automatic change never collide.</dd>
+          </dl>
+          <p class="project__links">
+            <a href="https://stagol33.github.io/RandomQuoteGenerator/">Live site</a>
+            <a href="https://github.com/Stagol33/RandomQuoteGenerator">Code on GitHub</a>
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section__head">
+        <h2 id="about-title">About me</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__bio">
+          <img class="about__photo" src="images/breck-cooper.webp" width="520" height="350" alt="Breck Cooper smiling, arms folded, in a grey knit sweater outside a modern building.">
+          <p>I'm James "Breck" Cooper, a software engineer with more than eight years in the industry. Today I'm a senior front-end developer at KnowBe4, where I build security-awareness training that ships in dozens of languages and has to work for everyone, including people using screen readers and right-to-left scripts.</p>
+          <p>I came to code sideways. Audio engineering taught me to listen for the one thing that's off in a mix, and graphic design taught me to see it. A master's in computer science gave me the tools to fix it. I still work that way: get the details right so the whole thing feels effortless.</p>
+        </div>
+
+        <div class="about__path">
+          <h3>How I got here</h3>
+          <ol class="timeline">
+            <li>
+              <span class="timeline__when">2007–2010</span>
+              <span class="timeline__what">BS in Audio Engineering, Belmont University, Nashville</span>
+            </li>
+            <li>
+              <span class="timeline__when">Then</span>
+              <span class="timeline__what">Graphic designer, Immortal Printing</span>
+            </li>
+            <li>
+              <span class="timeline__when">2013–2016</span>
+              <span class="timeline__what">MS in Computer Science, Middle Tennessee State University</span>
+            </li>
+            <li>
+              <span class="timeline__when">Now</span>
+              <span class="timeline__what">Senior front-end developer, KnowBe4</span>
+            </li>
+          </ol>
+
+          <h3>What I work with</h3>
+          <dl class="skills">
+            <dt>Languages</dt>
+            <dd>JavaScript, HTML, CSS, Python, C#</dd>
+            <dt>Front end</dt>
+            <dd>React, Vue, responsive design, accessibility, localization</dd>
+            <dt>Back end</dt>
+            <dd>Node.js, Express, Sequelize, REST APIs</dd>
+            <dt>Design</dt>
+            <dd>Wireframing, prototyping, Figma, Adobe Creative Suite</dd>
+            <dt>Tools</dt>
+            <dd>Git, GitLab, Unix, Jira, Claude Code</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="section__head">
+        <h2 id="contact-title">Contact</h2>
+        <p>I'm happy to talk about front-end roles, accessibility work or anything audio. Email is the fastest way to reach me.</p>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <a href="mailto:breckcooper@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+              <rect x="2.5" y="5" width="19" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 6.5l9 6.5 9-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            <span class="contact-list__label">Email</span>
+            <span class="contact-list__value">breckcooper@<wbr>gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/breck-cooper-aa006245/">
+            <svg class="icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="8" cy="8" r="1.4" fill="currentColor"/>
+              <path d="M8 11v6M12 17v-6M12 13.5c0-1.6 1-2.6 2.4-2.6s2.1.9 2.1 2.6V17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="contact-list__label">LinkedIn</span>
+            <span class="contact-list__value">breck-cooper</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Stagol33">
+            <svg class="icon" viewBox="0 0 16 16" width="28" height="28" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            <span class="contact-list__label">GitHub</span>
+            <span class="contact-list__value">@Stagol33</span>
+          </a>
+        </li>
+        <li class="contact-list__static">
+          <svg class="icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+            <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span class="contact-list__label">Based in</span>
+          <span class="contact-list__value">Nashville, Tennessee</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span class="year">2026</span> Breck Cooper. Hand-built with HTML, CSS and JavaScript.</p>
+  </footer>
+</body>
+</html>
