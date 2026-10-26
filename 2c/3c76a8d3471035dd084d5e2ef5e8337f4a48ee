@@ -1,0 +1,21 @@
+index.html
+  s_dcf8e3c0f947c2::t_9bbe8ee51435cf 259-277
+css/styles.css
+  s_dcf8e3c0f947c2::t_7b7c6cf7126f88 544-574
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "2c3c76a8d3471035dd084d5e2ef5e8337f4a48ee",
+  "prompts": {},
+  "sessions": {
+    "s_dcf8e3c0f947c2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2c6fc82d-0511-4ff5-8443-5c551902e412",
+        "model": "unknown"
+      },
+      "human_author": "breck <breckc@knowbe4.com>"
+    }
+  }
+}
