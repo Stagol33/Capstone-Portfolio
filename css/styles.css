@@ -541,6 +541,37 @@ a:hover {
   color: var(--slate);
 }
 
+.about__path .skills {
+  margin-bottom: 2.5rem;
+}
+
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.certs img {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.25rem;
+}
+
+.certs__name {
+  display: block;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.certs__when {
+  display: block;
+  color: var(--slate);
+  font-size: 0.9375rem;
+}
+
 /* Contact */
 .contact-list {
   display: grid;
